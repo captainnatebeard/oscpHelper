@@ -1,8 +1,6 @@
 /**
 * Nathan Johnson
 * 11/15/18
-* CSE 154
-* Section AK
 * This is the javascript page for my pentester's notes webshell page.  It provides the frontend
 * behavior for the webshell.
 */
