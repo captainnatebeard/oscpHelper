@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+Nathan Johnson
+11/15/18
+CSE-154
+Section AK
+
+This is the HTML for the techniques page on my Pentester's notes website.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Reference Guide">
+  <meta name="author" content="Nate Johnson">
+  <title>Nate's Notes - A Pentester's Reference Guide</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>So you're taking the PWK test...</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="techniques.html">Techniques</a></li>
+        <li><a href="404.html">Bash Snippets</a></li>
+        <li><a href="exploits.html">Exploits</a></li>
+        <li><a href="index.html">WebShell</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>
+      <h2>Here are some Techniques that will help you on your way to passing the PWK test<h2>
+    </p>
+    <p>
+      <h3>SQL injection:</h3>
+      sql injection is one of the first things you'll learn on the road to being a pentester.
+      The idea is that many times, a web designer will haphazardly connect their databases with
+      their websites witout properly sanitizing the input. This usually happens in a login field
+      but can be present in any interface where the users input is used directly in an SQL query.
+      The results of an SQL injection attack can range anywhere from a login bypass to, in extreme
+      cases, full server compromiseA pentester's job is to learn how to recognize and take full
+      advantage of this vulnerabilty.
+    </p>
+    <p>
+      <h3>LFI/RFI:</h3>
+      LFI stands for local file injection.  RFI stands for remote file injection.  These
+      vulnerabilities allow a pentester to introduce new php code into a website environment, and
+      are the result of improper use of the includes() php function.  A RFI vulnerability will allow
+      a pentester to introduce a php file directly from his own web server, while an LFI
+      vulnerability forces a pentester to be a little more clever about his/her attack, usually
+      finding ways to introduce code through a log file or an improperly sanitized database.
+    </p>
+    <p>
+      <h3>XSS:</h3>
+      XSS stands for cross-site scripting, and is what is known as a client side attack.  Like an
+      SQL injection attack, this vulnerability is the result of not sanitizing user input, usually
+      in a form or other public forum.  The pentester will take advantage of certain javascript
+      techniques, such as invisible iframes to redirect an unsuspecting client to a malicious site.
+    </p>
+    <p>
+      <h3>stay tuned... more to come!</h3>
+    </p>
+  </main>
+  <footer>All images and icons were taken/created by me and are my own property
+    (c)2018 Nathan Johnson</footer>
+</body>
+
+</html>

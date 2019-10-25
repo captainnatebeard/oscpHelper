@@ -1,0 +1,20 @@
+/* Nate Johnson
+11/15/18
+CSE-154
+Section AK
+This is the CSS page for the 404 Not Found page of my Pentester's notes website.  In theory, it
+should be the page that shows up whenever anyone tries to navigate to a site that doesn't exist
+on my domain.  As of now, i just have it linked to the part of the website that is still
+unfinished (the bash snippets page)
+*/
+
+h1 {
+  color: green;
+  text-align:center;
+}
+
+body {
+  background-color: #041822;
+  color: green;
+  font-family: monospace;
+}

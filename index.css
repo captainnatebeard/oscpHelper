@@ -1,0 +1,130 @@
+/*
+* Nate Johnson
+* 11/15/18
+* CSE-154
+* Section AK
+*
+* This is the CSS page for all of the pages on my Pentester's notes website.  It provides the style
+* for all the pages except fot the 404 page
+*/
+
+body, header, footer, ul, main, section, article, div, form, #search-results, fieldset > div {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: darkgrey;
+  margin-right: 80px;
+  margin-left: 80px;
+  border: 3px solid black;
+  border-radius: 10px;
+  flex-direction: column;
+  font-family: monospace;
+}
+
+main, main section {
+  background-color: black;
+  color: green;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+body header, footer {
+  flex-direction: column;
+  background-color: #06f30626;
+  color: black;
+  padding: 10px;
+}
+
+header ul {
+  list-style: none;
+  justify-content: left;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  flex-direction: row;
+  border-radius: 5px;
+}
+
+nav ul {
+  justify-content: flex-start;
+}
+
+nav ul li {
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  padding:5px 20px;
+  margin-right: 10px;
+  background-color: #a2a2ca;
+}
+
+header {
+  padding-bottom: 0px;
+}
+
+footer, form {
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 500px;
+}
+
+input {
+  width: 85%;
+}
+
+#submit-btn, #priv-results-btn {
+  width: 12%;
+}
+
+.hidden {
+  display: none;
+}
+
+article {
+  width: 75%;
+}
+
+fieldset{
+  width: 80%;
+  margin: 25px;
+}
+
+div {
+  width: 80%;
+  margin: 15px;
+}
+
+.sploits {
+  margin-top 20px;
+  border: 4px solid white;
+}
+
+form {
+  flex-direction: row-reverse;
+}
+
+#search-results, #privesc-commands, #privesc-results {
+    flex-direction: column-reverse;
+}
+
+#search-results section, #privesc-results section {
+  word-break: break-word;
+}
+
+fieldset > div {
+  flex-direction: row;
+}
+
+fieldset div ul {
+  list-style: none;
+}
+
+.privesc-command {
+  width: 15px;
+}

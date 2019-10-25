@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+Nathan Johnson
+11/15/18
+CSE-154
+Section AK
+
+This is the HTML page for the WebShell page of my Pentester's notes website.
+It provides a general framework for the page.  Main is broken into 5 sections, each of which has
+different functionality within the webshell
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Reference Guide">
+  <meta name="author" content="Nate Johnson">
+  <title>Nate's Notes - A Pentester's Reference Guide</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h1>So you're taking the PWK test...</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="techniques.html">Techniques</a></li>
+        <li><a href="404.html">Bash Snippets</a></li>
+        <li><a href="exploits.html">Exploits</a></li>
+        <li><a href="index.html">WebShell</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Welcome to the Nate's notes Interactive Web Shell</h2>
+      <h3>The following simple guided setup should get you up and hacking in no time!</h3>
+      <p>First things first, let's make sure the php file is uploaded correctly</p>
+      <fieldset>
+        <legend>Where should we look for the WebShell?</legend>
+        <p>Enter the ip address or URL of the target server:</p>
+        <input type="text" class="input-field" value = "127.0.0.1">
+        <p>Enter the uri where we can find the webshell:</p>
+        <input type="text" class="input-field" value="/webshell.php">
+        <p>Enter the port number:</p>
+        <input type="text" class="input-field" value="80">
+        <form>
+          <br>
+          <input type="radio" name="ostype" value="windows">Windows<br>
+          <input type="radio" name="ostype" checked="true" value="Nix">'Nix<br>
+        </form>
+        <button type="button" id="get-target-btn">Check My Connection</button>
+      </fieldset>
+    </section>
+    <section class="hidden">
+      <h2>Cool! You're connected! So What do you wanna do?</h2>
+      <fieldset>
+        <legend>Choose one of the following options</legend>
+        <button type="button" id="simpleshell-btn">Simple Web Shell</button>
+        <button type="button" id="privesc-btn">Privilege Escalation Enum</button>
+      </fieldset>
+    </section>
+    <section class="hidden">
+      <h2>Simple Web Shell</h2>
+      <h3>This is the interface for the Nate's Notes Simple Web Shell. Use this resource when you
+          can't get a proper reverse/bind shell.</h3>
+      <fieldset>
+        <legend>Enter a command. Results should populate below</legend>
+        <input type="text" class="input-field" placeholder="enter your command here..">
+        <button type="button" id="submit-btn">submit</button>
+      </fieldset>
+      <div id="exploits">
+        <article id="search-results">
+        </article>
+        <button type="button" id="clear-btn">clear results</button>
+      </div>
+    </section>
+    <section class="hidden">
+      <h2>Sorry, there's been an error, try double checking your url, and trying again</h2>
+      <button type="button" id="backtomain">back to main</button>
+    </section>
+    <section class="hidden">
+      <h2>Welcome to the Nate's Notes Privilege Escalatanator!</h2>
+      <h3>We've collected some of the most useful commands for 'nix privilege escalation, and put
+      Them together for you.  All you have to do is point and click!</h3>
+      <fieldset id="privesc-commands">
+        <legend>Select the commands you'd like run on the target computer</legend>
+        <div>
+          <ul>
+            <li><input type="checkbox" class="privesc-command" value="id">Who am i</li><br>
+            <li><input type="checkbox" class="privesc-command" value="hostname">Host name</li><br>
+            <li><input type="checkbox" class="privesc-command"
+              value="cat /etc/passwd">List users</li><br>
+            <li><input type="checkbox" class="privesc-command"
+              value="netstat -lan">Check network</li><br>
+            <li><input type="checkbox" class="privesc-command" value="cat /etc/issue">Disto type</li><br>
+            <li><input type="checkbox" class="privesc-command" value="uname -a">Kernel version/basic info</li><br>
+            <li><input type="checkbox" class="privesc-command"
+              value="cat /etc/profile">Environment variables</li><br>
+            <li><input type="checkbox" class="privesc-command" value="ps aux">Running services</li><br>
+          </ul>
+          <ul>
+            <li><input type="checkbox" class="privesc-command"
+              value="ls /usr/bin;ls /usr/sbin">Installed binaries</li><br>
+            <li><input type="checkbox" class="privesc-command" value="crontab -l">Scheduled tasks</li><br>
+            <li><input type="checkbox" class="privesc-command" value="cat ~/.bash_history">Bash history</li><br>
+            <li><input type="checkbox" class="privesc-command" value="cat /etc/shadow">
+              Hashes?(already a privileged command)</li><br>
+            <li><input type="checkbox" class="privesc-command"
+              value="find / -perm -g=s -o -perm -u=s -type f 2>/dev/null">Suid and Guid Files</li><br>
+            <li><input type="checkbox" class="privesc-command" value=
+              "find / -writable -type d 2>/dev/null">World writable folders</li><br>
+            <li><input type="checkbox" class="privesc-command" value="which perl;which gcc;which python;
+              which cc;which nc;which ncat">Helpful tools installed?</li><br>
+          </ul>
+        </div>
+        <button type="button" id="priv-results-btn">Submit</button>
+      </fieldset>
+      <article id="privesc-results">
+      </article>
+    </section>
+  </main>
+  <footer>All images and icons were taken/created by me and are my own property
+    (c)2018 Nathan Johnson</footer>
+</body>
+</html>
